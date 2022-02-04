@@ -8,16 +8,16 @@ using namespace std;
 class Information {
 public:
     Information();
+    Information(const Information& original);
     Information(char*, char*, Date); //array of characters for first and last name, Date from Date.h for date of birth
 
     char* get_first_name();
     void set_first_name(char*);
     char* get_last_name();
     void set_last_name(char*);
-    void set_dateofbirth(int, int, int);
+    void set_dateofbirth(Date);
 
     void print();
-    void display_info();
 
 private:
     char* first_name;

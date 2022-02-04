@@ -1,26 +1,26 @@
-//#include <iostream>
-//using namespace std;
-//
-//#pragma once
-//
-//
-//class Guests {
-//public:
-//    int get_checkin_day();
-//    void set_checkin_day(int);
-//
-//    int get_checkout_day();
-//    void set_checkout_day(int);
-//
-//    Information* get_guest_info(int);
-//    void set_guest_info(Information*, int);
-//
-//    void print_checkinout();
-//
-//private:
-//    Information* guest_info[4]; //keeps information in array max capacity 4
-//    Date check_in;
-//    Date check_out;
-//
-//    int room; // room 1-20, max number of reserve room is one 
-//};
+#include "information.h"
+using namespace std;
+
+
+// More like Class Room but prof doesn't know design u know :)
+class Guests {
+public:
+    Guests(Information* iGuestInfo, Date iCheckIn, Date iCheckOut, int iRoom);
+
+    Date get_checkin();
+    void set_checkin(Date);
+    Date get_checkout();
+    void set_checkout(Date);
+    Information* get_guests_info();
+    void set_guests_info(Information*);
+    int getRoom();
+    void setRoom(int iRoom);
+
+    void print();
+
+private:
+    Information guests_info[4]; //keeps information in array max capacity 4
+    Date check_in;
+    Date check_out;
+    int room; // room 1-20, max number of reserve room is one 
+};

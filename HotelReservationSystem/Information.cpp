@@ -14,6 +14,13 @@ Information::Information() {
     Date date_of_birth = Date(0,0,0);
 }
 
+Information::Information(const Information& original)
+{
+    set_first_name(original.first_name);
+    set_last_name(original.last_name);
+    set_dateofbirth(original.date_of_birth);
+}
+
 Information::Information(char* f, char* l, Date dob) {
     set_first_name(f);
     set_last_name(l);

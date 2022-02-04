@@ -1,43 +1,54 @@
-#include <iostream>
-using namespace std;
-
-
-#include "Date.h"
 #include "Information.h"
 
-Information::Information() {
-    int day, month, year;
-    Date d = (0, 0, 0);
-    date_of_birth = d;
+int get_char_array_length(char* arr)
+{
+    int length = 0;
+    while (*(arr++) != '\0')
+        ++length;
+    return ++length;
 }
 
-Information::get_first_name() {
+Information::Information() {
+    first_name = nullptr;
+    last_name = nullptr;
+    Date date_of_birth = Date(0,0,0);
+}
+
+Information::Information(char* f, char* l, Date dob) {
+    set_first_name(f);
+    set_last_name(l);
+    Date date_of_birth = Date(dob.get_day(), dob.get_month(), dob.get_year());
+}
+
+char* Information::get_first_name() {
     return first_name;
 }
-Information::get_last_name() {
+char* Information::get_last_name() {
     return last_name;
-
 }
 
-void Information::set_first_name(char f) {
-    first_name = f;
+void Information::set_first_name(char* f) {
+    if (first_name)
+        delete[](first_name);
+
+    const int len = get_char_array_length(f);
+    first_name = new char[len];
+
+    memcpy(first_name, f, len);
 }
 
-void Information::set_last_name(char l) {
-    last_name = l;
+void Information::set_last_name(char* l) {
+    if (last_name)
+        delete[](last_name);
+
+    const int len = get_char_array_length(l);
+    last_name = new char[len];
+   
+    memcpy(last_name, l, len);
 }
 
-void Information::print_name() {
-    cout << "Enter first name:";
-    cin >> first_name;
-    cout << endl;
-    cout << "Enter last name:";
-    cin >> last_name;
-    cout << endl;
-
-}
-
-void Information::display_info() {
-    cout << first_name << last_name;
+void Information::print() {
+    cout << "First name: " << first_name << " , Last Name: " << last_name << " , The date of birth is: "
+        << date_of_birth.get_day() << "/" << date_of_birth.get_month() << "/" << date_of_birth.get_year();
 }
 

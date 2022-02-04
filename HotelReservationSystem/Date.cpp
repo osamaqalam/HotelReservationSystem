@@ -1,53 +1,44 @@
+#include "Date.h"
 #include <iostream>
 using namespace std;
 
-#include "Date.h"
+
 
 
 
 Date::Date() {
-	year = 2022;
-	day = 1;
-	month = 3;
-
-
+	year = 0;
+	day = 0;
+	month = 0;
 }
 Date::Date(int y, int d, int m)
 {
 	year = y;
 	day = d;
 	month = m;
-
 }
 
-void Date::setmonth(int m) {
+void Date::set_month(int m) {
 	month = m;
-
-
 }
 
-void Date::setyear(int y) {
-
+void Date::set_year(int y) {
 	year = y;
-
 }
-void Date::setday(int d) {
+void Date::set_day(int d) {
 	day = d;
 }
-int Date::getmonth() {
+int Date::get_month() {
 	return month;
-
 }
-int Date::getyear() {
+int Date::get_year() {
 	return year;
 }
-int Date::getday() {
+int Date::get_day() {
 	return day;
 }
 
 
 void Date::printdate() {
-
 	cout << "year: " << year << " month: " << month << " day: " << day << endl;
-
 }

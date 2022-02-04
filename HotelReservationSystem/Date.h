@@ -11,21 +11,17 @@ class Date
 public:
 	Date();
 	Date(int, int, int);
-	void setmonth(int);
-	void setyear(int);
-	void setday(int);
-	int getmonth();
-	int getyear();
-	int getday();
 
+	void set_day(int);
+	void set_month(int);
+	void set_year(int);
+	int get_day();
+	int get_month();
+	int get_year();
 
 	void printdate();
 
-
-
 private:
 	int year, month, day;
-
-
 };
 

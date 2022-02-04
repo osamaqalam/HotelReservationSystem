@@ -54,6 +54,11 @@ void Information::set_last_name(char* l) {
     memcpy(last_name, l, len);
 }
 
+void Information::set_dateofbirth(Date dob)
+{
+    date_of_birth = dob;
+}
+
 void Information::print() {
     cout << "First name: " << first_name << " , Last Name: " << last_name << " , The date of birth is: "
         << date_of_birth.get_day() << "/" << date_of_birth.get_month() << "/" << date_of_birth.get_year();

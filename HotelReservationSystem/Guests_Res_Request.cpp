@@ -21,8 +21,8 @@ Guests* Guests_Reservation_Request::get_guests()
 
 void Guests_Reservation_Request::set_guests(Guests* iGuests)
 {
-	for (int i = 0; i < 4; i++)
-		guests[i] = iGuests[i];
+	guests = iGuests;
+	
 }
 
 int Guests_Reservation_Request::get_nights()

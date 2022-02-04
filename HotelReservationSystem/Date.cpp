@@ -11,7 +11,7 @@ Date::Date() {
 	day = 0;
 	month = 0;
 }
-Date::Date(int y, int d, int m)
+Date::Date(int d, int m, int y)
 {
 	year = y;
 	day = d;

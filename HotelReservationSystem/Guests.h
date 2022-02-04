@@ -13,8 +13,8 @@ public:
     void set_checkout(Date);
     Information* get_guests_info();
     void set_guests_info(Information*);
-    int getRoom();
-    void setRoom(int iRoom);
+    int get_room();
+    void set_room(int iRoom);
 
     void print();
 

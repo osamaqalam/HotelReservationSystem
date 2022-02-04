@@ -41,12 +41,12 @@ void Guests::set_guests_info(Information* iGuestsInfo)
 	}
 }
 
-int Guests::getRoom()
+int Guests::get_room()
 {
 	return room;
 }
 
-void Guests::setRoom(int iRoom)
+void Guests::set_room(int iRoom)
 {
 	room = iRoom;
 }
